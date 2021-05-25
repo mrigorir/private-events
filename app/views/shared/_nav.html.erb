@@ -1,0 +1,27 @@
+<nav class="nav bg-light padding"> 
+ <!-- <li class="nav-item"> 
+    <%= link_to "Home", root_path, class: "nav-link" %> 
+  </li>
+  <li class="nav-item"> 
+    <%= link_to "Posts list", posts_path, class: "nav-link" %> 
+  </li>-->
+  
+ <% if user_signed_in? %>
+ <a class="navbar-brand" href="#">welcome <%= current_user.email %></a>
+
+  <!--<li class="nav-item"> 
+    <%= link_to "Create post", new_post_path, class: "nav-link" %> 
+  </li> -->
+  <li class="nav-item"> 
+    <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %> 
+  </li> 
+  <% else %>
+  <li class="nav-item"> 
+    <%= link_to "Log In", new_user_session_path, class: "nav-link" %> 
+  </li>
+  <li class="nav-item"> 
+    <%= link_to "Register", new_user_registration_path, class: "nav-link" %> 
+  </li>
+  <% end %>
+
+</nav>
