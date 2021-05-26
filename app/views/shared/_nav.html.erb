@@ -8,6 +8,9 @@
     <%= link_to 'Create event', new_event_path, class: "nav-link text-white" %>
   </li>
   <li clss="nav-item">
+    <%= link_to 'My events', user_path(current_user.id), class: "nav-link text-white" %>
+  </li>
+  <li clss="nav-item">
     <%= link_to 'Edit Profile', edit_user_registration_path, class: "nav-link text-white" %>
   </li>
   <li class="nav-item"> 

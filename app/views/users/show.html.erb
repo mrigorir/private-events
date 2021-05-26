@@ -1,2 +1,20 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container mt-5">
+  <h1 class="text-center mb-5">Events created by: <%= @current_user.name %></h1>
+  <% @user_events.each do |event| %>
+  <ul>
+    <div class="border shadow p-3 mb-3 text-secondary lead list-unstyled d-flex align-items-center justify-content-between">
+      <div>
+        <li><strong> Title: </strong>    <%=event.event_name %>     </li>
+        <li><strong> Location: </strong> <%=event.event_location %> </li>
+        <li><strong> Date: </strong>     <%=event.event_date %>     </li>
+      </div>
+      <div> 
+        <%= link_to 'Read More', event_path(event.id), class: "btn btn-outline-primary" %>
+      </div>
+    </div>
+  </ul>
+  <% end %>
+</div>
+
+
+

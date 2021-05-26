@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[index]
 
   def index
+    @events = Event.all
   end
 
   def new
@@ -13,11 +14,14 @@ class EventsController < ApplicationController
    @event = current_user.events.build(events_params)
     if @event.save
       flash[:notice] = 'Event created!'
-      render :new
+      render :show
     else
       flash.now[:alert] = 'Check your inputs, something went wrong!'
       render :new
     end
+  end
+
+  def show  
   end
 
   def edit
