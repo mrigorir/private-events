@@ -1,22 +1,27 @@
-<%=form_with(model: @post, local: true) do |form| %>
-  <% if @post.errors.any? %>
+<%=form_with(model: @event, local: true) do |form| %>
+  <% if @event.errors.any? %>
     <div class="alert alert-danger mt-4">
-      <p style="font-weight: bold;"><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</p>
+      <p style="font-weight: bold;"><%= pluralize(@event.errors.count, "error") %> prohibited this post from being saved:</p>
       <ul>
-        <% @post.errors.full_messages.each do |message| %>
+        <% @event.errors.full_messages.each do |message| %>
         <li> <%= message %><br><br> </li>
         <% end %>
       </ul>
     </div>
   <% end %> 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :event_name %>
+    <%= form.text_field :event_name %>
   </div>
 
    <div class="field">
-    <%= form.label :body %>
-    <%= form.rich_text_area :body %>
+    <%= form.label :event_location %>
+    <%= form.text_field :event_location %>
+  </div>
+
+   <div class="field">
+    <%= form.label :event_date %>
+    <%= form.date_field :event_date %>
   </div>
 
   <div class="mt-3 d-flex justify-content-center">
