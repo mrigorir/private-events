@@ -28,8 +28,9 @@ class EventsController < ApplicationController
   end
 
   def update
-    if @event.update(find_params)
+    if @event.update(events_params)
       flash[:notice] = 'Event updated!'
+      render :show
     else
       flash.now[:alert] = 'Check your fields, something went wrong!'
       render :edit
@@ -37,7 +38,7 @@ class EventsController < ApplicationController
   end 
 
   def events_params
-    params.require(:event).permit(:event_name, :event_location, :event_date)
+    params.require(:event).permit(:event_name, :event_location, :event_date, :description)
   end
 
   private

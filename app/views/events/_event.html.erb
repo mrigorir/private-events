@@ -1,11 +1,9 @@
 
 <div class="border shadow p-3 mb-3 text-secondary lead list-unstyled d-flex align-items-center justify-content-between">
  <div>
-   <li><strong> Title: </strong>    <%=event.event_name %>     </li>
-   <li><strong> Location: </strong> <%=event.event_location %> </li>
-   <li><strong> Date: </strong>     <%=event.event_date %>     </li>
+   <li><strong> Event owner: </strong>  <%=event.creator.name %>  </li>
  </div>
  <div> 
-  <%= link_to 'Read More', event_path(event.id), class: "btn btn-outline-primary" %>
+  <%= link_to 'Read More', event_path(event.id), class: "btn btn-outline-dark" %>
  </div>
 </div>
