@@ -62,6 +62,10 @@ Please note that you must have Git installed on your PC, this can be done [here]
 
 - Run `yarn` to install all the dependencies.
 
+- Rub 'yarn add jquery popper.js bootstrap'
+
+- Run `rails action_text:install`
+
 - Run `db:migrate` so you can have the representations of tables in your project
 
 - Run `rails c` in order to interact with your terminal app.
