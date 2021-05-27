@@ -15,6 +15,15 @@
               <%= link_to 'Edit', edit_event_path(@event.id), class: "btn btn-outline-dark", style: "margin-right: 20px;" %>
               <%= link_to 'Go back', root_path, class: "btn btn-outline-secondary" %>
             </div>
+                <p class="my-3 has-text-primary">
+                Attendees:
+                <ol>
+                  <%= show_attendee_lists(@attendees) %>
+                </ol>
+                </p>
+                <p class="mt-4">
+                  <%= render 'attend_cancel' %>
+                </p>
           </div>
         </p>
       </div> 

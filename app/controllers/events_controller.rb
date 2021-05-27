@@ -21,7 +21,9 @@ class EventsController < ApplicationController
     end
   end
 
-  def show  
+  def show
+    #@attendees = @event.attendees.order('name ASC')
+    @attendance = Event.new  
   end
 
   def edit

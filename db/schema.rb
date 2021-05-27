@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_05_27_170747) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
-    t.text "descrption"
+    t.text "body"
     t.string "record_type", null: false
     t.bigint "record_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2021_05_27_170747) do
     t.integer "attended_event_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
+  end   
 
   create_table "events", force: :cascade do |t|
     t.string "event_name"
