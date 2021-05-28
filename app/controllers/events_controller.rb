@@ -3,7 +3,8 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[index]
 
   def index
-    @events = Event.all
+    @next_events = Event.next
+    @past_events = Event.past
   end
 
   def new
@@ -11,10 +12,10 @@ class EventsController < ApplicationController
   end
 
   def create
-   @event = current_user.events.build(events_params)
+    @event = current_user.events.build(events_params)
     if @event.save
       flash[:notice] = 'Event created!'
-      render :show
+      redirect_to @event
     else
       flash.now[:alert] = 'Check your inputs, something went wrong!'
       render :new
@@ -37,7 +38,13 @@ class EventsController < ApplicationController
       flash.now[:alert] = 'Check your fields, something went wrong!'
       render :edit
     end
-  end 
+  end
+
+  def destroy
+    @event.destroy
+    flash[:alert] = 'Event has been removed'
+    redirect_to root_path
+  end
 
   def events_params
     params.require(:event).permit(:event_name, :event_location, :event_date, :description)

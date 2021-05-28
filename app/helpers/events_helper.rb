@@ -1,18 +1,5 @@
 # rubocop:disable Layout/LineLength
 module EventsHelper
-  def show_event_list(events)
-    out = ''
-    events.each do |event|
-      out += '<div class="box">'
-      out += "<ul><li>#{link_to event.event_title, event_url(event), class: 'event-title'}</li>"
-      out += "<li><b>Description:</b> #{event.description}</li>"
-      out += "<li><b>Date:</b> #{event.event_date}</li>"
-      out += "<li><b>Location:</b> #{event.event_location}</li></ul>"
-      out += '</div>'
-    end
-    out.html_safe
-  end
-
   def show_attendee_lists(_attendees)
     out = ''
     if user_signed_in?

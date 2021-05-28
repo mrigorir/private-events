@@ -5,27 +5,53 @@
       <div class="card-header">
       <h3 class="d-flex align-items-center justify-content-center">Event Owner: <%= @event.creator.name %></h3>
       </div>
-     <!-- <div class="card-body">
-        <p class="card-text">
+      <div class="card-body">
+        <ul class="card-text">
           <div class="mb-3 text-secondary lead list-unstyled">
             <div>
-              <p><strong> Description: </strong> <%= @event.description %> </p>
-            </div> -->
-            <div class="d-flex align-items-center justify-content-center mt-3"> 
-              <%= link_to 'Edit', edit_event_path(@event.id), class: "btn btn-outline-dark", style: "margin-right: 20px;" %>
-              <%= link_to 'Go back', root_path, class: "btn btn-outline-secondary" %>
+              <li class="mb-2"> 
+                <strong> <i class="fa fa-align-justify text-dark"> </i> 
+                  Description: 
+                </strong> 
+                  <%= @event.description %>
+              </li>
+              <li class="mb-2">
+                <strong> <i class="fa fa-text-width text-dark"> </i> 
+                  Title:
+                </strong> 
+                  <%= @event.event_name %>     
+              </li>
+              <li class="mb-2">
+                <strong> <i class="fa fa-map-marker text-dark"> </i> 
+                  Location:    
+                </strong> 
+                  <%= @event.event_location %> 
+              </li>
+              <li class="mb-2">
+                <strong> <i class="fa fa-calendar-check text-dark"> </i>
+                  Date:        
+                </strong> 
+                  <%= @event.event_date %>     
+              </li>
+              <p class="mb-2 text-secondary">
+                <strong> 
+                  <i class="fa fa-address-card"> </i> Atendees:
+                </strong>
+              </p>
+              <ol> 
+                <%= show_attendee_lists(@attendees) %>
+              </ol>
+              <li> 
+                <%= render 'attend_cancel' %> 
+              </li>
             </div>
-                <p class="my-3 has-text-primary">
-                Attendees:
-                <ol>
-                  <%= show_attendee_lists(@attendees) %>
-                </ol>
-                </p>
-                <p class="mt-4">
-                  <%= render 'attend_cancel' %>
-                </p>
+            <div class="my-4 d-flex aling-items-center justify-content-center"> 
+              <%= link_to 'Home', root_path, class: "btn btn-outline-secondary", style: 'margin-right: 20px;' %>
+              <%= link_to 'Edit', edit_event_path(@event.id), class: "btn btn-outline-dark", style: 'margin-right: 20px;'%>
+              <%= link_to 'Destroy', event_path(@event.id), class: "btn btn-outline-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+            </div>
           </div>
-        </p>
+        </ul>
       </div> 
     </div>
    </div>
@@ -33,3 +59,5 @@
 </div>
 
   
+ 
+            

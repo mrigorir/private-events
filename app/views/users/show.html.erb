@@ -1,15 +1,16 @@
 <div class="container mt-5">
-  <h1 class="text-center mb-5">Events created by: <%= @current_user.name %></h1>
-  <% @user_events.each do |event| %>
+  <h1 class="text-center mb-5">Events attended by: <%= current_user.name %></h1>
+  <% @user_attendance.each do |attended_event| %>
   <ul>
     <div class="border shadow p-3 mb-3 text-secondary lead list-unstyled d-flex align-items-center justify-content-between">
       <div>
-        <li><strong> Title: </strong>    <%=event.event_name %>     </li>
-        <li><strong> Location: </strong> <%=event.event_location %> </li>
-        <li><strong> Date: </strong>     <%=event.event_date %>     </li>
+        <li><strong> Description: </strong>  <%=attended_event.event_name %>      </li>
+        <li><strong> Title: </strong>        <%=attended_event.event_name %>      </li>
+        <li><strong> Location: </strong>     <%=attended_event.event_location %>  </li>
+        <li><strong> Date: </strong>         <%=attended_event.event_date %>     </li>
       </div>
       <div> 
-        <%= link_to 'Read More', event_path(event.id), class: "btn btn-outline-primary" %>
+        <%= link_to 'Read More', event_path(attended_event.id), class: "btn btn-outline-primary" %>
       </div>
     </div>
   </ul>

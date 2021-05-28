@@ -2,6 +2,9 @@ class UsersController < ApplicationController
   before_action :find_user, only: %i[edit show update destroy]
   before_action :authenticate_user!, except: %i[index]
 
+  def index
+  end
+  
   def new
   end
 
@@ -9,7 +12,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user_events = current_user.events
     @user_attendance = @user.attended_events
   end
 
