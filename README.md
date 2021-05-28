@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Members Only
+# Associations
 
 > This is an application for members only of the Odin Project and its goal is to achieve the best coding practices for using Ruby on Rails. Members of the app can see who the author of a post is, but outside they can only see the story.
   
