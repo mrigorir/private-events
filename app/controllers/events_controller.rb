@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event =  current_user.created_events.build(events_params)
+    @event = current_user.created_events.build(events_params)
     if @event.save
       flash[:notice] = 'Event created!'
       redirect_to @event
@@ -24,11 +24,10 @@ class EventsController < ApplicationController
 
   def show
     @attendees = @event.attendees.order('name ASC')
-    @attendance = Event.new  
+    @attendance = Event.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @event.update(events_params)

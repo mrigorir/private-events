@@ -2,14 +2,11 @@ class UsersController < ApplicationController
   before_action :find_user, only: %i[edit show update destroy]
   before_action :authenticate_user!, except: %i[index]
 
-  def index
-  end
-  
-  def new
-  end
+  def index; end
 
-  def create
-  end
+  def new; end
+
+  def create; end
 
   def show
     @user_attendance = @user.attended_events

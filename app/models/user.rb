@@ -3,7 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :created_events, foreign_key: :creator_id, class_name: 'Event', dependent: :destroy
-  
+
   has_many :event_attendees, foreign_key: :attendee_id, dependent: :destroy
   has_many :attended_events, through: :event_attendees
 
@@ -14,7 +14,7 @@ class User < ApplicationRecord
   end
 
   def attend!(event)
-    self.event_attendees.create(attended_event_id: event.id)
+    event_attendees.create(attended_event_id: event.id)
   end
 
   def cancel!(event)
