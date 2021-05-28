@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: "events#index"
   resources :events
   resources :event_attendees, only: [:create, :destroy] do
@@ -7,6 +6,7 @@ Rails.application.routes.draw do
       post :attend
     end
   end
-  # get 'users/:id', to: 'user#show', as: :user
+  devise_for :users
+  
   resources :users, only: [:index, :show] 
 end

@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :event_attendees, foreign_key: :attendee_id, dependent: :destroy
   has_many :attended_events, through: :event_attendees
 
+  validates :name, length: { maximum: 20 }, uniqueness: { case_sensitive: false }
+
   def attending?(event)
     event.attendees.include?(self)
   end
