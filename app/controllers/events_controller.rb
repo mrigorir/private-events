@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    #@attendees = @event.attendees.order('name ASC')
+    @attendees = @event.attendees.order('name ASC')
     @attendance = Event.new  
   end
 
