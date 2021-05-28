@@ -17,7 +17,7 @@ module EventsHelper
     out = ''
     if user_signed_in?
       @event.attendees.each do |attendee|
-        out += "<li class=\"ml-6\">#{attendee.username}</li>"
+        out += "<li class=\"ml-6\">#{attendee.name}</li>"
       end
     else
       out += '<button class="button is-primary" title="Disabled button" disabled>Sign up or Log in to attend this event</button>'

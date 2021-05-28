@@ -11,7 +11,7 @@ class EventsController < ApplicationController
   end
 
   def create
-   @event = current_user.events.build(events_params)
+    @event = current_user.events.build(events_params)
     if @event.save
       flash[:notice] = 'Event created!'
       render :show
@@ -22,8 +22,8 @@ class EventsController < ApplicationController
   end
 
   def show
-    #@attendees = @event.attendees.order('name ASC')
-    @attendance = Event.new  
+    # @attendees = @event.attendees.order('name ASC')
+    @attendance = Event.new
   end
 
   def edit
@@ -37,7 +37,7 @@ class EventsController < ApplicationController
       flash.now[:alert] = 'Check your fields, something went wrong!'
       render :edit
     end
-  end 
+  end
 
   def events_params
     params.require(:event).permit(:event_name, :event_location, :event_date, :description)

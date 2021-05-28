@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :events
  
   resources :event_attendees, only: [:create, :destroy]
-  get 'user/:id', to: 'user#show', as: :user
-  resources :users
+  # get 'users/:id', to: 'user#show', as: :user
+  resources :users, only: [:index, :show]
+
 end

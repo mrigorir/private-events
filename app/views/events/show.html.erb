@@ -5,16 +5,24 @@
       <div class="card-header">
       <h3 class="d-flex align-items-center justify-content-center">Event Owner: <%= @event.creator.name %></h3>
       </div>
-     <!-- <div class="card-body">
+      <div class="card-body">
         <p class="card-text">
           <div class="mb-3 text-secondary lead list-unstyled">
             <div>
-              <p><strong> Description: </strong> <%= @event.description %> </p>
-            </div> -->
+              <p><strong> Name: </strong> <%= @event.event_name %> </p>
+            </div>
+            <div>
+              <p><strong> Location: </strong> <%= @event.event_location %> </p>
+            </div>
+            <div>
+              <p><strong> Date: </strong> <%= @event.event_date %> </p>
+            </div>
             <div class="d-flex align-items-center justify-content-center mt-3"> 
               <%= link_to 'Edit', edit_event_path(@event.id), class: "btn btn-outline-dark", style: "margin-right: 20px;" %>
               <%= link_to 'Go back', root_path, class: "btn btn-outline-secondary" %>
             </div>
+                <%= link_to 'Attend to this event', event_attendees_path, method: :post %>
+
                 <p class="my-3 has-text-primary">
                 Attendees:
                 <ol>
@@ -22,7 +30,7 @@
                 </ol>
                 </p>
                 <p class="mt-4">
-                  <%= render 'attend_cancel' %>
+                  <%= render 'cancel' %>
                 </p>
           </div>
         </p>
