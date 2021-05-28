@@ -21,7 +21,7 @@
               <%= link_to 'Edit', edit_event_path(@event.id), class: "btn btn-outline-dark", style: "margin-right: 20px;" %>
               <%= link_to 'Go back', root_path, class: "btn btn-outline-secondary" %>
             </div>
-                <%= link_to 'Attend to this event', event_attendees_path, method: :post %>
+                <%= link_to 'Attend to this event', attend_event_attendee_path, method: :post %>
 
                 <p class="my-3 has-text-primary">
                 Attendees:

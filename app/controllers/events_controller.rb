@@ -14,7 +14,7 @@ class EventsController < ApplicationController
     @event = current_user.events.build(events_params)
     if @event.save
       flash[:notice] = 'Event created!'
-      render :show
+      redirect_to @event
     else
       flash.now[:alert] = 'Check your inputs, something went wrong!'
       render :new
