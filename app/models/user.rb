@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  scope :upcomming_events, -> { where('event_date >= ?', Date.today).order('event_date ASC') }
+  scope :past_events, -> { where('event_date <  ?', Date.today).order('event_date DESC') }
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
