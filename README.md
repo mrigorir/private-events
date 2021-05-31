@@ -67,9 +67,7 @@ To get a local copy up and running follow these simple example steps:
 
 - Run `yarn` to install all the dependencies.
 
-- Rub 'yarn add jquery popper.js bootstrap'
-
-- Run `rails action_text:install`
+- Rub ``yarn add jquery popper.js bootstrap``
 
 - Run `db:migrate` so you can have the representations of tables in your project
 
