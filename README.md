@@ -57,21 +57,25 @@ To get a local copy up and running follow these simple example steps:
 
   `$ git clone https://github.com/pountzas/private-evetns.git` <em>Press Enter key</em><br>
 
-- Your local copy will be created
+- Your local copy will be created.
 
 - Please note that you must have Git installed on your PC, this can be done [here](https://gist.github.com/derhuerst/1b15ff4652a867391f03)
 
 - After you get the project aiming to the desired directory, you need now to install ruby globally
   
-  for that, in your terminal run `bundle install` to install the project's dependencies
+  for that, in your terminal run `bundle install` to install the project's dependencies.
 
 - Run `yarn` to install all the dependencies.
 
 - Rub ``yarn add jquery popper.js bootstrap``
 
-- Run `db:migrate` so you can have the representations of tables in your project
+- Run `db:migrate` so you can have the representations of tables in your project.
 
-- Run `rails c` in order to interact with your terminal app
+- Run `rake db:migrate RAILS_ENV=test` so you can have the representations of test tables in your project.
+
+- run ``rspec`` to run the test cases.
+
+- Run `rails c` in order to interact with your terminal app.
 
 ## Authors
 
