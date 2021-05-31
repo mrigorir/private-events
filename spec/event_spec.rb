@@ -9,7 +9,8 @@ RSpec.describe Event, type: :model do
   it 'succeeds when creating an event with a user' do
     # user = User.create(name: 'Person')
     user = User.create(name: 'User', email: 'example2@example.com', password: '123456', password_confirmation: '123456')
-    event = Event.new(event_name: 'Meeting', event_date: '01/01/2001', event_location: 'home', creator_id: user.id, description: 'asdasdasdasdasdasdasd')
+    event = Event.new(event_name: 'Meeting', event_date: '01/01/2001', event_location: 'home', creator_id: user.id,
+                      description: 'asdasdasdasdasdasdasd')
     event.save
     expect(event).to eq(Event.first)
   end
