@@ -1,0 +1,47 @@
+<div class="my-5">
+  <h1 class="text-center mb-5">Events List</h1>
+  <div class="row"> 
+    <div class="col-md-6">
+      <h3 class="text-center text-secondary mt-3 mb-4"> 
+        Previous Events 
+      </h3>
+      <ul>
+        <% @past_events.each do |past_event| %>
+          <div class="border shadow p-3 mb-3 text-secondary lead list-unstyled d-flex align-items-center justify-content-between">
+            <div>
+              <li class="mb-2"><strong> <i class="fa fa-align-justify text-dark">  </i>  Description: </strong> <%=past_event.description %>    </li>
+              <li class="mb-2"><strong> <i class="fa fa-text-width text-dark">     </i>  Title:       </strong> <%=past_event.event_name %>     </li>
+              <li class="mb-2"><strong> <i class="fa fa-map-marker text-dark">     </i>  Location:    </strong> <%=past_event.event_location %> </li>
+              <li class="mb-2"><strong> <i class="fa fa-calendar-check text-dark"> </i>  Date:        </strong> <%=past_event.event_date %>     </li>
+              <li class="mb-2"><strong> <i class="fa fa-user text-dark">           </i>  Owner:       </strong> <%=past_event.creator.name %>   </li>
+            </div>
+            <div> 
+              <%= link_to 'Read More', event_path(past_event.id), class: "btn btn-outline-dark" %>
+            </div>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+     <div class="col-md-6">
+      <h3 class="text-center text-secondary mt-3 mb-4"> 
+        Upcomming Events 
+      </h3>
+      <ul>
+        <% @next_events.each do |next_event| %>
+          <div class="border shadow p-3 mb-3 text-secondary lead list-unstyled d-flex align-items-center justify-content-between">
+            <div>
+              <li class="mb-2"><strong> <i class="fa fa-align-justify text-dark">  </i>  Description: </strong> <%=next_event.description %>    </li>
+              <li class="mb-2"><strong> <i class="fa fa-text-width text-dark">     </i>  Title:       </strong> <%=next_event.event_name %>     </li>
+              <li class="mb-2"><strong> <i class="fa fa-map-marker text-dark">     </i>  Location:    </strong> <%=next_event.event_location %> </li>
+              <li class="mb-2"><strong> <i class="fa fa-calendar-check text-dark"> </i>  Date:        </strong> <%=next_event.event_date %>     </li>
+              <li class="mb-2"><strong> <i class="fa fa-user text-dark">           </i>  Owner:       </strong> <%=next_event.creator.name %>   </li>
+            </div>
+            <div> 
+              <%= link_to 'Read More', event_path(next_event.id), class: "btn btn-outline-dark" %>
+            </div>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+ </div>
+</div>

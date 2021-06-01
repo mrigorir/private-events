@@ -1,0 +1,39 @@
+<%=form_with(model: @event, local: true) do |form| %>
+  <% if @event.errors.any? %>
+    <div class="alert alert-danger mt-4">
+      <p style="font-weight: bold;"><%= pluralize(@event.errors.count, "error") %> prohibited this post from being saved:</p>
+      <ul>
+        <% @event.errors.full_messages.each do |message| %>
+        <li> <%= message %><br><br> </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <strong> 
+      <%= form.label :description, class: 'mb-2' %> 
+    </strong> 
+    <%= form.rich_text_area :description, class: 'form-control mb-3' %>
+  </div> 
+  <div class="form-group">
+    <strong> 
+      <%= form.label :event_name, class: 'mb-2' %> 
+    </strong> 
+    <%= form.text_field :event_name, class: 'form-control mb-3' %>
+  </div>
+  <div class="form-group">
+    <strong> 
+      <%= form.label :event_location, class: 'mb-2' %> 
+    </strong> 
+    <%= form.text_field :event_location, class: 'form-control mb-3' %>
+  </div>
+  <div class="form-group">
+    <strong> 
+      <%= form.label :event_date, class: 'mb-2' %> 
+    </strong> 
+    <%= form.date_field :event_date, class: 'form-control mb-3' %>
+  </div>
+  <div class="mt-4 d-flex justify-content-center">
+   <%= form.submit class: 'btn btn-dark' %>
+  </div>
+<%end %>

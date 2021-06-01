@@ -24,6 +24,11 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# gem 'bootstrap', '~> 4.4.1'
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'devise'
+gem 'jquery-rails', '~> 4.3.5'
+gem 'popper_js', '~> 1.16'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -33,8 +38,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails', '~> 5.0.0'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -54,4 +59,10 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+gem 'spring'
+
+group :development, :test do
+  gem 'rspec-rails'
+end
