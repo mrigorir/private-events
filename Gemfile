@@ -8,10 +8,15 @@ gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 
 gem 'rubocop', '~> 1.15'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+# Use pg as the database for Active Record
+group :production do
+  gem 'pg', '>= 0.18', '< 2.0'
+  gem 'rails_12factor'
+end
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
+
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
